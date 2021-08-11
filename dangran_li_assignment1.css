@@ -1,0 +1,19 @@
+table {
+  text-align: center;
+  width: 700px;
+  height: 150px;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 2px solid black;
+}
+
+input {
+  width: 500px;
+  height: 35px;
+  border-radius: 25px;
+  border: 1px solid lightgray;
+}

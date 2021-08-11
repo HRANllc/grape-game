@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- import css file in <head>  tags -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./dangran_li_assignment1.css"
+    />
+    <title>JS_Assignment3</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Age</th>
+          <th>Phone #</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      // <!--1.Table with styles-->
+      const tableInfo = [
+        {
+          studentName: "John",
+          age: "19",
+          phone: "455-983-0903",
+          address: "123 Ave, San Francisco, CA, 94011",
+        },
+        {
+          studentName: "Alex",
+          age: "21",
+          phone: "455-983-0912",
+          address: "456 Rd, San Francisco, CA, 94012",
+        },
+        {
+          studentName: "Josh",
+          age: "22",
+          phone: "455-345-0912",
+          address: "789 Dr, Newwark, CA, 94016",
+        },
+        {
+          studentName: "Matt",
+          age: "23",
+          phone: "321-345-0912",
+          address: "223 Dr, Sunnyvale, CA, 94016",
+        },
+      ];
+      //   create row in tbody
+      let tbody = document.querySelector("tbody");
+      for (let i = 0; i < tableInfo.length; i++) {
+        let tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        // create td in table
+        for (let j in tableInfo[i]) {
+          let td = document.createElement("td");
+          td.innerHTML = tableInfo[i][j];
+          tr.appendChild(td);
+        }
+      }
+    </script>
+    <br /><br />
+    <!--2.Google style text input box with placeholder:Search-->
+    <input
+      type="text"
+      class="search"
+      placeholder="Search"
+      onkeypress="search(this)"
+    />
+    <script>
+      function search(ele) {
+        if (event.key === "Enter") {
+          alert(ele.value);
+        }
+      }
+    </script>
+    <br /><br />
+    <!--3.order list and unordered list-->
+    <ol id="orderlist"></ol>
+    <script>
+      const list = ["HTML", "JavaScript", "CSS", "React", "Redux", "Java"];
+      let html = "";
+      for (var i = 0; i < list.length; i++) {
+        html += "<li>" + list[i] + "</li>";
+      }
+      document.getElementById("orderlist").innerHTML = html;
+    </script>
+    <br />
+    <ul id="unorderedlist"></ul>
+    <script>
+      let html1 = "";
+      for (var i = 0; i < list.length; i++) {
+        html1 += "<li>" + list[i] + "</li>";
+      }
+      document.getElementById("unorderedlist").innerHTML = html1;
+    </script>
+    <br />
+    <!--4.A dropdown list-->
+    <script>
+      var sel = document.createElement("select");
+      const dropDownList = [
+        { value: "newark", content: "Newark" },
+        { value: "santaClara", content: "Santa Clara" },
+        { value: "unionCity", content: "Union City" },
+        { value: "albany", content: "Albany" },
+        { value: "dalyCity", content: "Daly City" },
+        { value: "sanJose", content: "San Jose" },
+      ];
+      var options_str = "";
+      dropDownList.forEach(function (ele) {
+        options_str +=
+          '<option value="' + ele.value + '">' + ele.content + "</option>";
+      });
+      sel.innerHTML = options_str;
+      window.onload = function () {
+        document.body.appendChild(sel);
+      };
+    </script>
+  </body>
+</html>
